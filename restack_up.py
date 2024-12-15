@@ -37,7 +37,7 @@ async def main():
     app = {
         'name': 'flask_gemini',
         'gitUrl': 'https://github.com/ranjancse26/restack.demo',
-        'dockerFilePath': 'https://github.com/ranjancse26/restack.demo/.Dockerfile',
+        'dockerFilePath': 'https://github.com/ranjancse26/restack.demo/Dockerfile',
         'dockerBuildContext': 'https://github.com/ranjancse26/restack.demo',
         'environmentVariables': [
             {
