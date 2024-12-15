@@ -3,7 +3,7 @@
 FROM python:slim
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /src
 
 # Copy the requirements file into the container
 COPY requirements.txt .
@@ -11,12 +11,12 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the current directory contents into the container at /app
+# Copy the current directory contents into the container at /src
 COPY . .
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
 
 # Run the application
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
 
