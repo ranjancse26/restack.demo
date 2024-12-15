@@ -8,14 +8,9 @@ async def main():
     restack_cloud_client = RestackCloud(os.getenv('RESTACK_CLOUD_TOKEN'))
 
     engine = {
-        'name': 'restack_engine', # IMPORTANT: This must match the name of the engine in the Restack Cloud console.
+        'name': 'Demo', # IMPORTANT: This must match the name of the engine in the Restack Cloud console.
         'image': 'ghcr.io/restackio/restack:main',
         'portMapping': [
-            {
-                'port': 5233,
-                'path': '/',
-                'name': 'engine-frontend',
-            },
             {
                 'port': 6233,
                 'path': '/api',
