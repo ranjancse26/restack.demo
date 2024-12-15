@@ -2,7 +2,7 @@
 FROM python:3.10-slim
 
 # Set the working directory in the container
-WORKDIR /src
+WORKDIR /app
 
 # Copy only the dependency files to leverage Docker caching
 COPY pyproject.toml poetry.lock ./
@@ -15,6 +15,9 @@ RUN poetry install --no-root --no-dev
 
 # Copy the rest of the application code
 COPY . .
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
 # Command to run your application
 CMD ["python", "app.py"]
